@@ -1,0 +1,5 @@
+local args = {
+    [1] = "_lobbytemplate212"
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
