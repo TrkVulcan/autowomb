@@ -1,0 +1,13 @@
+if not game:IsLoaded() then
+game.Loaded:Wait()
+end
+
+wait(5)
+local args = {
+    [1] = "_lobbytemplate_event29",
+    [2] = {
+        ["selected_key"] = "key_jjk_map"
+    }
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
