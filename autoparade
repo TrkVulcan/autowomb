@@ -2,7 +2,17 @@ if not game:IsLoaded() then
 game.Loaded:Wait()
 end
 
-wait(5)
+wait(1)
+local args = {
+    [1] = "key_jjk_map_gold",
+    [2] = "event",
+    [3] = "keys_shop"
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
+
+wait(0.5)
+
 local args = {
     [1] = "_lobbytemplate_event29",
     [2] = {
@@ -11,3 +21,5 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
+
+
