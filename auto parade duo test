@@ -17,7 +17,7 @@ while _G.Paradejoin do
 game.Loaded:Wait()
 end
 
-wait(25)
+wait(20)
 
 local args = {
     [1] = "_lobbytemplate_event29",
