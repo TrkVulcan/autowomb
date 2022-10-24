@@ -1,0 +1,26 @@
+--- [Services]>
+local Players_Service = game:GetService("Players");
+
+--- [Variables]>
+_G.Player_Name = "CloudyArrya"
+
+--- [Objects]>
+local LocalPlayer = Players_Service.LocalPlayer
+
+--- [Functions]>
+local OnPlayerRemoved_Function = function(Player)
+    --- [Objects]>
+    local Player_Name = _G.Player_Name
+
+    if not Player.Name == _G.Player_Name then
+        print(Player_Name, "Left")
+    else
+        --- [Objects]>
+        local Date = DateTime.now()
+
+        LocalPlayer:Kick(Player_Name, "Left On", Date:FormatLocalTime("LTS", "en-us"))
+    end
+end
+
+--- [Call Functions]>
+Players_Service.PlayerRemoved:Connect(OnPlayerRemoved_Function)
