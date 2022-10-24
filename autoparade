@@ -1,15 +1,21 @@
-if not game:IsLoaded() then
-game.Loaded:Wait()
-end
-
-wait(1)
-local args = {
+if game.PlaceId == 8304191830 then
+    _G.Paradejoin = true
+    task.wait(1)
+    print("L your on lobby kys")
+    task.wait(1)
+    local args = {
     [1] = "key_jjk_map_gold",
     [2] = "event",
     [3] = "keys_shop"
 }
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
+end
+
+while _G.Paradejoin do
+    if not game:IsLoaded() then
+game.Loaded:Wait()
+end
 
 wait(0.5)
 
@@ -21,5 +27,10 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
+end
 
-
+if game.PlaceId == 8349889591 then
+    _G.Paradejoin = false
+    task.wait(1)
+    print("L your ingame already kys")
+end
