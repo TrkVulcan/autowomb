@@ -11,7 +11,7 @@ local args = {
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
 
-wait(15)
+wait(25)
 
 local args = {
     [1] = "_lobbytemplate_event29",
