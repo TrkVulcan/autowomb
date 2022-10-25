@@ -1,3 +1,7 @@
+if not game:IsLoaded() then
+game.Loaded:Wait()
+end
+
 if game.PlaceId == 8304191830 then
     _G.Paradejoin = true
     task.wait(1)
@@ -13,9 +17,6 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic
 end
 
 while _G.Paradejoin do
-    if not game:IsLoaded() then
-game.Loaded:Wait()
-end
 
 wait(16.5)
 
